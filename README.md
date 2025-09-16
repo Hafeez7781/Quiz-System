@@ -25,23 +25,27 @@ A console-based Quiz System with **Admin** and **User** roles.
    ```bash
    git clone https://github.com/your-username/quiz-system.git
    cd quiz-system
-   ```
+Install dependencies:
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+bash
+Copy code
+pip install -r requirements.txt
+Import the database schema:
 
-3. Import the database schema:
-   ```sql
-   SOURCE schema.sql;
-   ```
+Open MySQL Workbench or terminal
 
-4. Run the project:
-   ```bash
-   python quiz_system.py
-   ```
+Run:
 
-5. Admin Login:
-   - **Username:** admin  
-   - **Password:** admin123
+sql
+Copy code
+SOURCE schema.sql;
+Run the project:
+
+bash
+Copy code
+python quiz_system.py
+Admin Login:
+
+Username: hafeez
+
+Password: 123
