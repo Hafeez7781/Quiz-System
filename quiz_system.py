@@ -19,10 +19,10 @@ def admin_login():
     admin = cur.fetchone()
 
     if admin:
-        print("\n✅ Login Successful!\n")
+        print("\n Login Successful!\n")
         admin_menu()
     else:
-        print("\n❌ Invalid Credentials!\n")
+        print("\n Invalid Credentials!\n")
 
 def admin_menu():
     while True:
@@ -68,7 +68,7 @@ def add_question():
         VALUES (%s,%s,%s,%s,%s,%s,%s)
     """, (tech, q_text, opt1, opt2, opt3, opt4, correct))
     db.commit()
-    print("✅ Question Added!")
+    print(" Question Added!")
 
 def modify_question():
     qid = input("Enter Question ID to modify: ")
@@ -88,7 +88,7 @@ def modify_question():
         WHERE q_id=%s
     """, (new_q, new_o1, new_o2, new_o3, new_o4, new_correct, qid))
     db.commit()
-    print("✅ Question Updated!")
+    print(" Question Updated!")
 
 def delete_question():
     qid = input("Enter Question ID to delete: ")
@@ -97,7 +97,7 @@ def delete_question():
     cur = db.cursor()
     cur.execute("DELETE FROM questions WHERE q_id=%s", (qid,))
     db.commit()
-    print("✅ Question Deleted!")
+    print(" Question Deleted!")
 
 def view_questions():
     db = connect_db()
@@ -136,9 +136,9 @@ def user_login():
         db.commit()
         cur.execute("SELECT * FROM users WHERE username=%s AND mobile=%s", (username, mobile))
         user = cur.fetchone()
-        print("\n✅ New User Registered!\n")
+        print("\n New User Registered!\n")
     else:
-        print("\n✅ Welcome Back!\n")
+        print("\n Welcome Back!\n")
 
     user_menu(user[0])   # pass user_id
 
@@ -170,7 +170,7 @@ def take_quiz(user_id):
     questions = cur.fetchall()
 
     if not questions:
-        print("⚠️ No Questions Available for this technology!")
+        print(" No Questions Available for this technology!")
         return
 
     score = 0
@@ -182,14 +182,14 @@ def take_quiz(user_id):
         if ans == q[7]:
             score += 1
 
-    print(f"\n✅ Quiz Completed! Your Score = {score}/{len(questions)}")
+    print(f"\n Quiz Completed! Your Score = {score}/{len(questions)}")
 
     cur.execute("""
         INSERT INTO results (user_id, technology, score, quiz_time)
         VALUES (%s,%s,%s,%s)
     """, (user_id, tech, score, datetime.now()))
     db.commit()
-    print("✅ Result Saved!")
+    print("Result Saved!")
 
 def top_scores():
     db = connect_db()
