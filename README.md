@@ -53,6 +53,6 @@ python quiz_system.py
 
 Admin Login
 ===========================
-Username: admin
+Username: hafeez
 
-Password: admin123
+Password: 123
