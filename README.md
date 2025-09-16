@@ -1,51 +1,52 @@
-# Quiz System (Python + MySQL)
+Quiz System (Python + MySQL)
 
-A console-based Quiz System with **Admin** and **User** roles.
+A console-based Quiz System with Admin and User roles.
 
-## Features
-### Admin
-- Login
-- Add / Modify / Delete Questions
-- View Questions
-- View Users & Scores
+Features
+Admin
 
-### User
-- Register / Login
-- Take Quiz (Python/MySQL/etc.)
-- View Score
-- See Top 3 Scores
+Login
 
-## Tech Stack
-- Python 3
-- MySQL
-- mysql-connector-python
+Add / Modify / Delete Questions
 
-## Setup Instructions
+View Questions
+
+View Users & Scores
+
+User
+
+Register / Login
+
+Take Quiz (Python/MySQL/etc.)
+
+View Score
+
+See Top 3 Scores
+
+Tech Stack
+
+Python 3
+
+MySQL
+
+mysql-connector-python
+
+Setup Instructions
 1. Clone this repo:
-   ```bash
-   git clone https://github.com/your-username/quiz-system.git
-   cd quiz-system
-Install dependencies:
+git clone https://github.com/your-username/quiz-system.git
+cd quiz-system
 
-bash
-Copy code
+2. Install dependencies:
 pip install -r requirements.txt
-Import the database schema:
 
-Open MySQL Workbench or terminal
-
-Run:
-
-sql
-Copy code
+3. Import the database schema:
 SOURCE schema.sql;
-Run the project:
 
-bash
-Copy code
+4. Run the project:
 python quiz_system.py
-Admin Login:
 
-Username: hafeez
+Admin Login
 
-Password: 123
+Username: admin
+
+Password: admin123
